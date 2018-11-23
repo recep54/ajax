@@ -1,0 +1,43 @@
+<h1> My Best Email Box </h1>
+
+
+
+
+
+
+<div class= "container">
+
+		<div class= "right">
+			<div>OBJET</div>
+				<% @emails.each do |email| %>
+				<div>
+					<% if email.read == true %>
+					<div id="object_<%= email.id %>" class="read" ><%= link_to email.object, email_path(email), remote: true %></div>
+					<% else %>
+					<div id="object_<%= email.id %>" class="ur" ><%= link_to email.object, email_path(email), remote: true %></div>
+					<% end %>
+				</div>
+				<% end %>
+			
+		</div>
+
+		<div class= "left">
+			<div >
+				<div>
+					<div>CONTENU</div>
+				</div>
+			</div>
+			<% @emails.each do |email| %>
+			<div id="mail_<%= email.id %>" class="emailcontent" style="display: none;" >
+				<div class="row" id="box">
+					<h2><%= email.object %></h2><br>
+					<p><%= email.body %></p>
+					<%= link_to email, remote: true, method: :delete, class: 'delete_email' , data: { confirm: 'Are you sure?' } do %>
+					<button>Delete!</button>
+					<% end %>
+				</div>
+			</div>
+			<% end %>
+			</div>
+		</div>
+</div>

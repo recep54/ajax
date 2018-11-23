@@ -1,0 +1,28 @@
+
+
+.container {
+	width: 100% !important;
+	position: fixed;
+	display: flex;
+	justify-content: space-around;
+}
+
+.test{
+	background-color: yellow;
+}
+
+h1 {
+color: white;
+text-align: center;
+background: #a1a1a1; 
+}
+
+
+
+.right{
+	min-width: 500px;
+}
+
+.left{
+max-width: 800px;
+}
